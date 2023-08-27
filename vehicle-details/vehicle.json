@@ -1,0 +1,14 @@
+{
+    "Brand": "Aston",
+    "Model": "Victor",
+    "Year": 2018,
+    "Engine": {
+        "key": "V-12",
+        "capacity": "3400cc"
+    },
+    "Features": ["Alloy Wheels", "Sunroof", "Navigation"],
+    "Color": "Black",
+    "Price": "$300,000",
+    "sold": true,
+    "image": "_dsc9991.jpg"
+}
