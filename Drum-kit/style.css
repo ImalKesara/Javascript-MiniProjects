@@ -29,14 +29,14 @@ html {
     width: 10rem;
     text-align: center;
     color: white;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 1);
     text-shadow: 0 0 .5rem black;
 }
 
 .playing {
     transform: scale(1.1);
-    border-color: #05ffd1;
-    box-shadow: 0 0 1rem #0026ff;
+    border-color: #ff6600;
+    box-shadow: 0 0 1rem #ff6600;
 }
 
 kbd {
@@ -48,5 +48,5 @@ kbd {
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
-    color: #ffc600;
+    color: #ff6600;
 }
