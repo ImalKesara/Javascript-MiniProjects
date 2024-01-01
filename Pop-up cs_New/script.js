@@ -4,10 +4,12 @@ const model = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const closeBtn = document.querySelector('.close-modal');
 const showBtn = document.querySelectorAll('.show-modal');
+const Title = document.querySelector('.title').textContent;
 
 const closeModal2 = function () {
   model.classList.add('hidden');
   overlay.classList.add('hidden');
+  console.log(Title);
 };
 
 const openModal = function () {
