@@ -39,3 +39,7 @@ const game = {
     team2: 6.5,
   },
 };
+//Q1
+const [player1, player2] = game.players;
+console.log(player1);
+console.log(player2);
