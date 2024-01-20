@@ -3,7 +3,7 @@
 const newQuotesBtn = document.querySelector(".newQuote-button");
 const localQuote = document.getElementById("quote");
 const localAuthor = document.getElementById("author");
-console.log(newQuotesBtn);
+console.log(localAuthor);
 
 // let apiQoutes = [];
 
@@ -11,7 +11,8 @@ const newQuotes = function () {
   // pick random quotes from apiQutes array
   let quote = localQuotes[Math.floor(Math.random() * localQuotes.length)];
   console.log(quote);
-  console.log(localQuotes.length);
+  localQuote.textContent = quote.text;
+  localAuthor.textContent = quote.author;
 };
 
 // get information from api
@@ -31,6 +32,5 @@ const newQuotes = function () {
 // getQuotes();
 
 newQuotesBtn.addEventListener("click", function () {
-  //   console.log("hi");
   newQuotes();
 });
