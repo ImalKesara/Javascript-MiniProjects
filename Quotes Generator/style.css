@@ -75,6 +75,10 @@ button {
   align-items: center;
 }
 
+.long-quote {
+  font-size: 2rem;
+}
+
 button:hover {
   filter: brightness(110%);
 }
