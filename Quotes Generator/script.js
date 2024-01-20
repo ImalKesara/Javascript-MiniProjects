@@ -1,5 +1,10 @@
 "use strict";
 
+const newQuotesBtn = document.querySelector(".newQuote-button");
+const localQuote = document.getElementById("quote");
+const localAuthor = document.getElementById("author");
+console.log(newQuotesBtn);
+
 // let apiQoutes = [];
 
 const newQuotes = function () {
@@ -24,4 +29,8 @@ const newQuotes = function () {
 // }
 
 // getQuotes();
-newQuotes();
+
+newQuotesBtn.addEventListener("click", function () {
+  //   console.log("hi");
+  newQuotes();
+});
