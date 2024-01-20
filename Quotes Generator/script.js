@@ -10,15 +10,20 @@ const newQuotes = function () {
   // pick random quotes from apiQutes array
   let quote = localQuotes[Math.floor(Math.random() * localQuotes.length)];
   console.log(quote);
-  localQuote.textContent = quote.text;
-
   //   check if author is null
-
   if (!quote.author) {
     localAuthor.textContent = "Unknown";
   } else {
     localAuthor.textContent = quote.author;
   }
+
+  if (quote.text.length < 50) {
+    localQuote.classList.add("long-quote");
+  } else {
+    localQuote.classList.remove("long-quote");
+  }
+
+  localQuote.textContent = quote.text;
 };
 
 // get information from api
