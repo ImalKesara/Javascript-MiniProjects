@@ -3,7 +3,6 @@
 const newQuotesBtn = document.querySelector(".newQuote-button");
 const localQuote = document.getElementById("quote");
 const localAuthor = document.getElementById("author");
-console.log(localAuthor);
 
 // let apiQoutes = [];
 
