@@ -3,6 +3,7 @@
 const newQuotesBtn = document.querySelector(".newQuote-button");
 const localQuote = document.getElementById("quote");
 const localAuthor = document.getElementById("author");
+const twitterBtn = document.querySelector(".twitter-button");
 
 // let apiQoutes = [];
 
@@ -26,6 +27,11 @@ const newQuotes = function () {
   localQuote.textContent = quote.text;
 };
 
+const twitterQuote = function () {
+  const twitterUrl = `https://twitter.com/intent/tweet?text= ${localQuote.textContent} - ${localAuthor.textContent}`;
+  window.open(twitterUrl, "_blank");
+};
+
 // get information from api
 // async function getQuotes() {
 //   const apiUrl = "https://type.fit/api/quotes";
@@ -42,6 +48,13 @@ const newQuotes = function () {
 
 // getQuotes();
 
+// twitterBtn.addEventListener("click", function () {
+//   twitterQuote();
+// });
+//javascript method js called
+twitterBtn.addEventListener("click", twitterQuote);
+
+//user called
 newQuotesBtn.addEventListener("click", function () {
   newQuotes();
 });
