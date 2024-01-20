@@ -11,7 +11,14 @@ const newQuotes = function () {
   let quote = localQuotes[Math.floor(Math.random() * localQuotes.length)];
   console.log(quote);
   localQuote.textContent = quote.text;
-  localAuthor.textContent = quote.author;
+
+  //   check if author is null
+
+  if (!quote.author) {
+    localAuthor.textContent = "Unknown";
+  } else {
+    localAuthor.textContent = quote.author;
+  }
 };
 
 // get information from api
