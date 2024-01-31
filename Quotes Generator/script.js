@@ -3,11 +3,26 @@
 const newQuotesBtn = document.querySelector(".newQuote-button");
 const localQuote = document.getElementById("quote");
 const localAuthor = document.getElementById("author");
+const loader = document.getElementById("loader");
 const twitterBtn = document.querySelector(".twitter-button");
+const quoteContainer = document.querySelector(".Quote");
+
+console.log(quoteContainer);
+console.log(loader);
+
+const loading = function () {
+  loader.hidden = false;
+  quoteContainer.hidden = true;
+};
+const complete = function () {
+  quoteContainer.hidden = false;
+  loader.hidden = true;
+};
 
 // let apiQoutes = [];
 
 const newQuotes = function () {
+  loading();
   // pick random quotes from apiQutes array
   let quote = localQuotes[Math.floor(Math.random() * localQuotes.length)];
   console.log(quote);
@@ -25,6 +40,7 @@ const newQuotes = function () {
   }
 
   localQuote.textContent = quote.text;
+  complete();
 };
 
 const twitterQuote = function () {
@@ -51,10 +67,8 @@ const twitterQuote = function () {
 // twitterBtn.addEventListener("click", function () {
 //   twitterQuote();
 // });
-//javascript method js called
+// javascript method js called
 twitterBtn.addEventListener("click", twitterQuote);
 
 //user called
-newQuotesBtn.addEventListener("click", function () {
-  newQuotes();
-});
+newQuotesBtn.addEventListener("click", newQuotes);
