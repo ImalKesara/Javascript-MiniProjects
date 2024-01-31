@@ -22,7 +22,6 @@ const complete = function () {
 // let apiQoutes = [];
 
 const newQuotes = function () {
-  loading();
   // pick random quotes from apiQutes array
   let quote = localQuotes[Math.floor(Math.random() * localQuotes.length)];
   console.log(quote);
@@ -40,7 +39,6 @@ const newQuotes = function () {
   }
 
   localQuote.textContent = quote.text;
-  complete();
 };
 
 const twitterQuote = function () {
