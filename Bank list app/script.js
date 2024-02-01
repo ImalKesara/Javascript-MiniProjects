@@ -71,6 +71,57 @@ const currencies = new Map([
   ["GBP", "Pound sterling"],
 ]);
 
+/////////////////////////////////////////////////
+let arr = ["a", "b", "c", "d", "e", "f"];
+let arrr = ["e", "v", "s", "7", "o", "x"];
+console.log(arr.slice());
+// arr.splice(2, 3);
+console.log(arrr.reverse([...arr, ...arrr]));
+
+const letters = arr.concat(arrr);
+console.log(letters);
+
+console.log(arr.join("-"));
+
+console.log([...arr, ...arrr]);
+
+const Arr = [23, 44, 22];
+
+console.log(Arr[Arr.length - 1]);
+
+console.log("Imal".at(2));
+
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-/////////////////////////////////////////////////
+for (const movement of movements) {
+  if (movement > 0) {
+    console.log(movement);
+  } else {
+    console.log(movement);
+  }
+}
+
+console.log("----------------");
+movements.forEach((e) => {
+  if (e > 0) {
+    console.log(e);
+  } else {
+    console.log(e);
+  }
+});
+
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`No ${i} Movement ${movement}`);
+  } else {
+    console.log(`No ${i} Movement ${movement}`);
+  }
+}
+
+movements.forEach(function (movement, index, array) {
+  if (movement > 0) {
+    console.log(`no ${index} : Movemnt ${movement}`);
+  } else {
+    console.log(`no ${index} : Movemnt ${movement}`);
+  }
+});
