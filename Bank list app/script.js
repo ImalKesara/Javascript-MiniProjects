@@ -68,6 +68,9 @@ const currencies = new Map([
 ]);
 
 const displayMovements = function (movements) {
+  // containerMovements.textContent = "";
+  containerMovements.innerHTML = "";
+
   movements.forEach(function (value, index) {
     console.log(`${index + 1} ${value}`);
     const type = value > 0 ? "deposit" : "withdrawal";
@@ -83,7 +86,11 @@ const displayMovements = function (movements) {
     `;
 
     containerMovements.insertAdjacentHTML("afterbegin", html);
+
+    // containerMovements.innerHTML = html;
   });
 };
 
 displayMovements(account1.movements);
+
+// console.log(containerMovements.innerHTML);
