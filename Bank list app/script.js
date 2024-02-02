@@ -4,7 +4,33 @@
 /////////////////////////////////////////////////
 // BANKIST APP
 
-// Data
+// Elements
+const labelWelcome = document.querySelector(".welcome");
+const labelDate = document.querySelector(".date");
+const labelBalance = document.querySelector(".balance__value");
+const labelSumIn = document.querySelector(".summary__value--in");
+const labelSumOut = document.querySelector(".summary__value--out");
+const labelSumInterest = document.querySelector(".summary__value--interest");
+const labelTimer = document.querySelector(".timer");
+
+const containerApp = document.querySelector(".app");
+const containerMovements = document.querySelector(".movements");
+
+const btnLogin = document.querySelector(".login__btn");
+const btnTransfer = document.querySelector(".form__btn--transfer");
+const btnLoan = document.querySelector(".form__btn--loan");
+const btnClose = document.querySelector(".form__btn--close");
+const btnSort = document.querySelector(".btn--sort");
+
+const inputLoginUsername = document.querySelector(".login__input--user");
+const inputLoginPin = document.querySelector(".login__input--pin");
+const inputTransferTo = document.querySelector(".form__input--to");
+const inputTransferAmount = document.querySelector(".form__input--amount");
+const inputLoanAmount = document.querySelector(".form__input--loan-amount");
+const inputCloseUsername = document.querySelector(".form__input--user");
+const inputClosePin = document.querySelector(".form__input--pin");
+
+// Accounts
 const account1 = {
   owner: "Jonas Schmedtmann",
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
@@ -35,93 +61,29 @@ const account4 = {
 
 const accounts = [account1, account2, account3, account4];
 
-// Elements
-const labelWelcome = document.querySelector(".welcome");
-const labelDate = document.querySelector(".date");
-const labelBalance = document.querySelector(".balance__value");
-const labelSumIn = document.querySelector(".summary__value--in");
-const labelSumOut = document.querySelector(".summary__value--out");
-const labelSumInterest = document.querySelector(".summary__value--interest");
-const labelTimer = document.querySelector(".timer");
-
-const containerApp = document.querySelector(".app");
-const containerMovements = document.querySelector(".movements");
-
-const btnLogin = document.querySelector(".login__btn");
-const btnTransfer = document.querySelector(".form__btn--transfer");
-const btnLoan = document.querySelector(".form__btn--loan");
-const btnClose = document.querySelector(".form__btn--close");
-const btnSort = document.querySelector(".btn--sort");
-
-const inputLoginUsername = document.querySelector(".login__input--user");
-const inputLoginPin = document.querySelector(".login__input--pin");
-const inputTransferTo = document.querySelector(".form__input--to");
-const inputTransferAmount = document.querySelector(".form__input--amount");
-const inputLoanAmount = document.querySelector(".form__input--loan-amount");
-const inputCloseUsername = document.querySelector(".form__input--user");
-const inputClosePin = document.querySelector(".form__input--pin");
-
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// LECTURES
-
 const currencies = new Map([
   ["USD", "United States dollar"],
   ["EUR", "Euro"],
   ["GBP", "Pound sterling"],
 ]);
 
-/////////////////////////////////////////////////
-let arr = ["a", "b", "c", "d", "e", "f"];
-let arrr = ["e", "v", "s", "7", "o", "x"];
-console.log(arr.slice());
-// arr.splice(2, 3);
-console.log(arrr.reverse([...arr, ...arrr]));
+const displayMovements = function (movements) {
+  movements.forEach(function (value, index) {
+    console.log(`${index + 1} ${value}`);
+    const type = value > 0 ? "deposit" : "withdrawal";
 
-const letters = arr.concat(arrr);
-console.log(letters);
+    const html = `
+        <div class="movements__row">
+          <div class="movements__type movements__type--${type}">${
+      index + 1
+    } ${type}</div>
+          <div class="movements__value">${value}</div>
+        </div>
+      
+    `;
 
-console.log(arr.join("-"));
+    containerMovements.insertAdjacentHTML("afterbegin", html);
+  });
+};
 
-console.log([...arr, ...arrr]);
-
-const Arr = [23, 44, 22];
-
-console.log(Arr[Arr.length - 1]);
-
-console.log("Imal".at(2));
-
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-for (const movement of movements) {
-  if (movement > 0) {
-    console.log(movement);
-  } else {
-    console.log(movement);
-  }
-}
-
-console.log("----------------");
-movements.forEach((e) => {
-  if (e > 0) {
-    console.log(e);
-  } else {
-    console.log(e);
-  }
-});
-
-for (const [i, movement] of movements.entries()) {
-  if (movement > 0) {
-    console.log(`No ${i} Movement ${movement}`);
-  } else {
-    console.log(`No ${i} Movement ${movement}`);
-  }
-}
-
-movements.forEach(function (movement, index, array) {
-  if (movement > 0) {
-    console.log(`no ${index} : Movemnt ${movement}`);
-  } else {
-    console.log(`no ${index} : Movemnt ${movement}`);
-  }
-});
+displayMovements(account1.movements);
