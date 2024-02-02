@@ -94,3 +94,77 @@ const displayMovements = function (movements) {
 displayMovements(account1.movements);
 
 // console.log(containerMovements.innerHTML);
+
+// let julia = [3, 5, 2, 12, 7];
+// const kate = [4, 1, 15, 8, 3];
+
+const juliaa = function (dogAges) {
+  dogAges.splice(0, 1);
+  dogAges.splice(2, 3);
+
+  dogAges.forEach((dogAge, index) => {
+    console.log(
+      dogAge >= 5
+        ? `Dog number ${index + 1} is an adult and is ${dogAge} years old.`
+        : `Dog number ${
+            index + 1
+          } is Still a  puppy and is ${dogAge} years old.`
+    );
+  });
+};
+
+const kate = function (dogAges) {
+  dogAges.splice(0, 1);
+  dogAges.splice(2, 3);
+
+  dogAges.forEach((dogAge, index) => {
+    console.log(
+      dogAge >= 5
+        ? `Dog number ${index + 1} is an adult and is ${dogAge} years old.`
+        : `Dog number ${
+            index + 1
+          } is Still a  puppy and is ${dogAge} years old.`
+    );
+  });
+};
+
+const bothData = function (dogjulia, dogKate) {
+  dogjulia.splice(0, 1);
+  dogjulia.splice(-2);
+
+  dogKate.splice(0, 1);
+  dogKate.splice(-2);
+
+  dogjulia.forEach((dogAge, index) => {
+    console.log(
+      dogAge >= 5
+        ? `Dog number ${index + 1} is an adult and is ${dogAge} years old.`
+        : `Dog number ${
+            index + 1
+          } is Still a  puppy and is ${dogAge} years old.`
+    );
+  });
+
+  dogKate.forEach((dogAge, index) => {
+    console.log(
+      dogAge >= 5
+        ? `Dog number ${index + 1} is an adult and is ${dogAge} years old.`
+        : `Dog number ${
+            index + 1
+          } is Still a  puppy and is ${dogAge} years old.`
+    );
+  });
+};
+
+juliaa([3, 5, 2, 12, 7]);
+kate([4, 1, 15, 8, 3]);
+
+console.log("-----------------------------");
+
+bothData([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
+
+const x = [2, 3, 4, 5];
+const y = [4, 5, 6];
+
+const r = [...x, ...y];
+console.log(r);
