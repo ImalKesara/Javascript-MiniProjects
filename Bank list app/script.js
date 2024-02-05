@@ -94,6 +94,12 @@ displayMovements(account1.movements);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
+// const max = movements.reduce(function (maxi, curr) {
+//   return maxi < curr ? (maxi = curr) : (maxi = maxi);
+// }, 0);
+
+// console.log(max);
+
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
     acc.username = acc.owner
@@ -112,7 +118,7 @@ const calcPrintBalance = (movements) => {
   const balance = movements.reduce(function (acc, curr) {
     return acc + curr;
   }, 0);
-  labelBalance.innerHTML = `$${balance}`;
+  labelBalance.textContent = `${balance} EUR`;
 };
 
-console.log(calcPrintBalance(movements));
+console.log(calcPrintBalance(account2.movements));
