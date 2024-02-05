@@ -107,3 +107,12 @@ const createUsernames = function (accs) {
 };
 
 createUsernames(accounts);
+
+const calcPrintBalance = (movements) => {
+  const balance = movements.reduce(function (acc, curr) {
+    return acc + curr;
+  }, 0);
+  labelBalance.innerHTML = `$${balance}`;
+};
+
+console.log(calcPrintBalance(movements));
