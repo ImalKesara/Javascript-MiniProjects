@@ -86,7 +86,6 @@ const displayMovements = function (movements) {
     `;
 
     containerMovements.insertAdjacentHTML("afterbegin", html);
-
     // containerMovements.innerHTML = html;
   });
 };
@@ -95,33 +94,16 @@ displayMovements(account1.movements);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-const eurTous = 2;
-
-// const newArray = movements.map(function (movement, index) {
-//   return `No ${index + 1}  eur to USD ${movement * 2}`;
-// });
-
-// console.log(movements);
-// console.log(newArray);
-
-// const newArraay = [];
-// for (const movement of movements) newArraay.push(movement * eurTous);
-
-// console.log(newArraay);
-
-// const newArray = movements.map(
-//   (movement, index) => `No ${index + 1}  eur to USD ${movement * 2}`
-// );
-
-const user = account1.owner;
-
-const userNames = function (user) {
-  const userName = user
-    .toLowerCase()
-    .split(" ")
-    .map((firstLetter) => firstLetter[0])
-    .join("");
-  console.log(userName);
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(" ")
+      .map(function (name) {
+        return name[0];
+      })
+      .join("");
+  });
 };
 
-userNames(user);
+createUsernames(accounts);
