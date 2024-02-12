@@ -120,5 +120,19 @@ const calcPrintBalance = (movements) => {
   }, 0);
   labelBalance.textContent = `${balance} EUR`;
 };
+calcPrintBalance(account4.movements);
 
-console.log(calcPrintBalance(account2.movements));
+const eur = 1.1;
+const TotaldepositUSD = movements
+  .filter((mov) => mov > 0)
+  .map((mov) => mov * eur)
+  .reduce((accu, mov) => accu + mov, 0);
+
+console.log(TotaldepositUSD);
+
+const TotalwithdrawalUSD = movements
+  .filter((mov) => mov < 0)
+  .map((mov) => mov * eur)
+  .reduce((accu, mov) => accu + mov, 0);
+
+console.log(TotalwithdrawalUSD);
