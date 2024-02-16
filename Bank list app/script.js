@@ -30,6 +30,8 @@ const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
+const eur = 1.1;
+
 // Accounts
 const account1 = {
   owner: "Jonas Schmedtmann",
@@ -120,19 +122,26 @@ const calcPrintBalance = (movements) => {
   }, 0);
   labelBalance.textContent = `${balance} EUR`;
 };
-calcPrintBalance(account4.movements);
 
-const eur = 1.1;
-const TotaldepositUSD = movements
-  .filter((mov) => mov > 0)
-  .map((mov) => mov * eur)
-  .reduce((accu, mov) => accu + mov, 0);
+calcPrintBalance(account1.movements);
 
-console.log(TotaldepositUSD);
+const calcDisplaySummary = function (movements) {
+  const income = movements
+    .filter((mov) => mov > 0)
+    .reduce((accu, mov) => accu + mov, 0);
+  labelSumIn.textContent = `${income}€`;
 
-const TotalwithdrawalUSD = movements
-  .filter((mov) => mov < 0)
-  .map((mov) => mov * eur)
-  .reduce((accu, mov) => accu + mov, 0);
+  const outcome = movements
+    .filter((mov) => mov < 0)
+    .reduce((accu, mov) => accu + mov, 0);
+  labelSumOut.textContent = `${Math.abs(outcome)}€`;
 
-console.log(TotalwithdrawalUSD);
+  const interest = movements
+    .filter((mov) => mov > 0)
+    .map((deposit) => (deposit * 1.2) / 100)
+    .filter((int, index, arr) => int >= 1)
+    .reduce((accu, mov) => accu + mov, 0);
+  labelSumInterest.textContent = `${interest}€`;
+};
+
+calcDisplaySummary(account1.movements);
