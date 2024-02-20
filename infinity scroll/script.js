@@ -12,8 +12,8 @@ const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count
 const setAttributes = function (element, attributes) {
   for (const key in attributes) {
     // console.log(key);
-    console.log(attributes);
-    console.log(attributes[key]);
+    // console.log(attributes);
+    // console.log(attributes[key]);
     element.setAttribute(key, attributes[key]);
     // item.setAttribute("href", photo.links.html);c
   }
@@ -61,5 +61,10 @@ async function getPhotos() {
     console.log("error", error);
   }
 }
+
+//Check to see if scrolling near bottom of page , load more photos
+window.addEventListener("scroll", () => {
+  console.log("scrolled");
+});
 
 getPhotos();
