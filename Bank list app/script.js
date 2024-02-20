@@ -70,7 +70,6 @@ const currencies = new Map([
 ]);
 
 const displayMovements = function (movements) {
-  // containerMovements.textContent = "";
   containerMovements.innerHTML = "";
 
   movements.forEach(function (value, index) {
@@ -88,19 +87,12 @@ const displayMovements = function (movements) {
     `;
 
     containerMovements.insertAdjacentHTML("afterbegin", html);
-    // containerMovements.innerHTML = html;
   });
 };
 
-displayMovements(account1.movements);
-
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-// const max = movements.reduce(function (maxi, curr) {
-//   return maxi < curr ? (maxi = curr) : (maxi = maxi);
-// }, 0);
-
-// console.log(max);
+console.log(movements.find((mov) => mov > 0));
 
 const createUsernames = function (accs) {
   accs.forEach(function (acc) {
@@ -114,16 +106,12 @@ const createUsernames = function (accs) {
   });
 };
 
-createUsernames(accounts);
-
 const calcPrintBalance = (movements) => {
   const balance = movements.reduce(function (acc, curr) {
     return acc + curr;
   }, 0);
   labelBalance.textContent = `${balance} EUR`;
 };
-
-calcPrintBalance(account1.movements);
 
 const calcDisplaySummary = function (movements) {
   const income = movements
@@ -144,4 +132,24 @@ const calcDisplaySummary = function (movements) {
   labelSumInterest.textContent = `${interest}€`;
 };
 
-calcDisplaySummary(account1.movements);
+createUsernames(accounts);
+
+let currentAccount;
+
+btnLogin.addEventListener("click", function (e) {
+  e.preventDefault();
+  currentAccount = accounts.find(
+    (acc) => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    console.log("logged");
+    labelWelcome.textContent = `Welcome Back, ${currentAccount.owner}`;
+    displayMovements(currentAccount.movements);
+    calcPrintBalance(currentAccount.movements);
+    calcDisplaySummary(currentAccount.movements);
+  } else {
+    alert("Wrong");
+  }
+});
