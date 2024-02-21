@@ -156,3 +156,7 @@ btnLogin.addEventListener("click", function (e) {
     alert("Wrong");
   }
 });
+
+btnTransfer.addEventListener("click", function (e) {
+  e.preventDefault();
+});
