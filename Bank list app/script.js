@@ -214,6 +214,9 @@ btnLoan.addEventListener("click", (e) => {
   inputLoanAmount.value = "";
 });
 
-console.log(movements);
-const anydeposit = movements.some((mov) => mov > 0);
-console.log(anydeposit);
+const accountMovements = accounts.map((acc) => acc.movements);
+const allMovements = accountMovements.flat();
+const overalBalance = allMovements.reduce((acc, curr) => acc + curr, 0);
+
+const overrall = accountMovements.flat().reduce((acc, curr) => acc + curr, 0);
+console.log(overrall);
