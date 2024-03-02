@@ -69,10 +69,12 @@ const currencies = new Map([
   ["GBP", "Pound sterling"],
 ]);
 
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = "";
 
-  movements.forEach(function (value, index) {
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (value, index) {
     console.log(`${index + 1} ${value}`);
     const type = value > 0 ? "deposit" : "withdrawal";
 
@@ -220,3 +222,20 @@ const overalBalance = allMovements.reduce((acc, curr) => acc + curr, 0);
 
 const overrall = accountMovements.flat().reduce((acc, curr) => acc + curr, 0);
 console.log(overrall);
+
+const onswer = ["julie", "captain", "opoo"];
+console.log(onswer.sort());
+
+movements.sort((a, b) => {
+  if (a > b) return 1;
+
+  if (b > a) return -1;
+});
+
+console.log(movements);
+let sorted = false;
+btnSort.addEventListener("click", (e) => {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
+});
