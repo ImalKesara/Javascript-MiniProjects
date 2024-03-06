@@ -75,7 +75,7 @@ const displayMovements = function (movements, sort = false) {
   const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
 
   movs.forEach(function (value, index) {
-    console.log(`${index + 1} ${value}`);
+    // console.log(`${index + 1} ${value}`);
     const type = value > 0 ? "deposit" : "withdrawal";
 
     const html = `
@@ -239,3 +239,21 @@ btnSort.addEventListener("click", (e) => {
   displayMovements(currentAccount.movements, !sorted);
   sorted = !sorted;
 });
+
+const bankDepositSum = accounts
+  .flatMap((acc) => acc.movements)
+  .filter((mov) => mov > 0)
+  .reduce((accu, curr) => accu + curr, 0);
+console.log(bankDepositSum);
+
+const sums = accounts
+  .flatMap((acc) => acc.movements)
+  .reduce(
+    (sum, cur) => {
+      cur > 0 ? (sum.deposit += cur) : (sum.withdrawal += cur);
+      return sum;
+    },
+    { deposit: 0, withdrawal: 0 }
+  );
+
+console.log(sums);

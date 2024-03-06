@@ -12,12 +12,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: whitesmoke;
+  background-color: rgb(117, 114, 114);
 }
 p {
   font-size: 2rem;
 }
 
-#button {
+.btn-container {
+  border: 1px solid whitesmoke;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  box-shadow: inset 0 2rem 0.4rem -1.9rem rgb(255, 255, 255, 0.7);
+}
+
+button {
+  cursor: pointer;
+  outline: none;
   font-family: "Kode Mono", monospace;
 }
