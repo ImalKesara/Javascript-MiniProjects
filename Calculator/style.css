@@ -1,5 +1,33 @@
-body {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 64.5%;
+}
+
+.container-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 50rem;
+  height: 70rem;
+  background: rgb(17, 196, 196);
+}
+
+.line-1 {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  gap: 1rem;
+  font-size: 4rem;
 }
