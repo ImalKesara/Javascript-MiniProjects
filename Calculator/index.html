@@ -7,38 +7,54 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="Calculator grid">
-      <div class="Screen">hello</div>
-      <div class="rows">
-        <div class="row-2">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-        </div>
-        <div class="row-3">
-          <div>5</div>
-          <div>6</div>
-          <div>7</div>
-          <div>8</div>
-        </div>
-        <div class="row-4">
-          <div>9</div>
-          <div>0</div>
-          <div>+</div>
-          <div>-</div>
-        </div>
-        <div class="row-5">
-          <div>*</div>
-          <div>/</div>
-          <div>AC</div>
-          <div>=</div>
-        </div>
-        <div class="row-6">
-          <div>.</div>
-          <div>DEL</div>
+    <main class="Calculator">
+      <div class="cal-body">
+        <div class="innerBody">
+          <div class="grid">
+            <!-- first Row -->
+            <div class="firstRow">
+              <div class="screen"></div>
+            </div>
+
+            <!-- Second Row -->
+            <div class="secondRow">
+              <div class="firstColumn">
+                <div id="buttons" class="number">1</div>
+                <div id="buttons" class="number">5</div>
+                <div id="buttons" class="number">9</div>
+                <div id="buttons" class="number">*</div>
+              </div>
+              <div class="secondColumn">
+                <div id="buttons" class="number">2</div>
+                <div id="buttons" class="number">6</div>
+                <div id="buttons" class="number">0</div>
+                <div id="buttons" class="number">/</div>
+              </div>
+              <div class="thridColumn">
+                <div id="buttons" class="number">3</div>
+                <div id="buttons" class="number">7</div>
+                <div id="buttons" class="number">+</div>
+                <div id="buttons" class="number">AC</div>
+              </div>
+              <div class="forthColumn">
+                <div id="buttons" class="number">4</div>
+                <div id="buttons" class="number">8</div>
+                <div id="buttons" class="number">-</div>
+                <div id="buttons" class="number">=</div>
+              </div>
+            </div>
+
+            <!-- ThirdRow -->
+            <div class="thirdRow">
+              <div class="fifthColumn">
+                <div id="buttons" class="number dot">.</div>
+                <div id="buttons" class="number del">DEL</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>

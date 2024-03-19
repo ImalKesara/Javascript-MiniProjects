@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 html {
@@ -12,52 +13,59 @@ html {
 
 .Calculator {
   max-width: 40rem;
-  height: 65rem;
-  margin: 20px auto;
-  font-size: 3rem;
-  background-color: #030202;
-  border-radius: 1.3rem;
+  height: 60rem;
+  margin: 2rem auto;
+  font-size: 2.5rem;
+  background-color: black;
   color: #fff;
-  font-family: "Poppins", sans-serif;
+  border-radius: 1rem;
 }
+
 .grid {
+  padding: 1.1rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.Screen {
-  background-color: #121212;
-  margin-top: 2.5rem;
-  padding: 2.2rem 1rem;
-  width: 39rem;
-}
-
-.row-2,
-.row-3,
-.row-4,
-.row-5,
-.row-6 {
-  display: flex;
-  justify-content: space-around;
-  gap: 2rem;
-  padding: 20px;
-  margin: 10px;
-}
-
-.row-2 div,
-.row-3 div,
-.row-4 div,
-.row-5 div,
-.row-6 div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.firstRow {
+  width: 100%;
+  height: 11rem;
+  grid-column: 1/5;
   background-color: #121212;
+  border-radius: 1rem;
+}
+
+.secondRow {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-around;
+  grid-column: span 4;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.number {
+  border-radius: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3.5rem;
+  margin-top: 1.5rem;
   width: 6.5rem;
   height: 6.5rem;
-  border-radius: 50%;
-  cursor: pointer;
+  background-color: #121212;
+}
+
+.thirdRow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fifthColumn {
+  gap: 1rem;
+  margin-right: 1rem;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
 }
