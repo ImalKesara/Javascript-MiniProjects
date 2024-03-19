@@ -1,6 +1,7 @@
 "use strict";
 const Screen = document.querySelector(".screen");
-const clearBtn = document.querySelector(".C");
+const clearBtn = document.querySelector(".clearBtn");
+const inputBtns = document.querySelectorAll("button");
 // let numbers = document.querySelectorAll(".number");
 // let op = document.querySelectorAll(".operator");
 // let firstNumber = "";
@@ -31,3 +32,29 @@ const clearBtn = document.querySelector(".C");
 //     Screen.textContent = operator;
 //   });
 // });
+function sendNumberValue(number) {
+  const displayValue = Screen.textContent;
+  Screen.textContent = displayValue === "0" ? number : displayValue + number;
+}
+
+function addDecimal() {
+  if (!Screen.textContent.includes(".")) {
+    Screen.textContent = `${Screen.textContent}.`;
+  }
+}
+
+inputBtns.forEach((inputBtn) => {
+  if (inputBtn.classList.length == 0) {
+    inputBtn.addEventListener("click", () => sendNumberValue(inputBtn.value));
+  } else if (inputBtn.classList.contains("operator")) {
+    inputBtn.addEventListener("click", () => sendNumberValue(inputBtn.value));
+  } else if (inputBtn.classList.contains("operator")) {
+    inputBtn.addEventListener("click", () => addDecimal);
+  }
+});
+
+function clearAll() {
+  Screen.textContent = "0";
+}
+
+clearBtn.addEventListener("click", clearAll);
