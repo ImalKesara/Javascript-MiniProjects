@@ -22,7 +22,7 @@ html {
 }
 
 .grid {
-  padding: 1.1rem;
+  padding: 1.5rem;
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -35,6 +35,9 @@ html {
   grid-column: 1/5;
   background-color: #121212;
   border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .secondRow {
@@ -45,7 +48,8 @@ html {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.number {
+button {
+  color: white;
   border-radius: 5rem;
   display: flex;
   justify-content: center;
@@ -55,7 +59,28 @@ html {
   width: 6.5rem;
   height: 6.5rem;
   background-color: #121212;
+  border: none;
+  font-size: 2.5rem;
+  transition: all 0.3s;
+  cursor: pointer;
 }
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* .number,
+.operator {
+  border-radius: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3.5rem;
+  margin-top: 1.5rem;
+  width: 6.5rem;
+  height: 6.5rem;
+  background-color: #121212;
+} */
 
 .thirdRow {
   display: flex;
@@ -65,7 +90,7 @@ html {
 
 .fifthColumn {
   gap: 1rem;
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
   display: grid;
   grid-template-columns: 2fr 2fr;
 }
