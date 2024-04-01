@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="container">
       <div class="sections">
-        <button class="selection">✊</button>
-        <button class="selection">🤚</button>
-        <button class="selection">✌️</button>
+        <button class="selection" data-x="rock">✊</button>
+        <button class="selection" data-x="paper">🤚</button>
+        <button class="selection" data-x="scissor">✌️</button>
       </div>
       <div class="results">
         <div>
@@ -23,9 +22,10 @@
           Computer
           <span class="result-score">0</span>
         </div>
-        <div class="result-section winner">✊</div>
-        <div class="result-section">✊</div>
+        <!-- <div class="result-section winner">✊</div>
+        <div class="result-section">✊</div> -->
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
