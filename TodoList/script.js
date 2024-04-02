@@ -16,4 +16,28 @@ function addTask() {
     li.appendChild(span);
   }
   inputBox.value = "";
+  addSave();
 }
+
+listContainer.addEventListener(
+  "click",
+  (e) => {
+    if (e.target.tagName === "LI") {
+      e.target.classList.toggle("checked");
+      addSave();
+    } else if (e.target.tagName === "SPAN") {
+      e.target.parentElement.remove(); // Means li tag going to removed.
+      addSave();
+    }
+  },
+  false
+);
+
+function addSave() {
+  localStorage.setItem("data", listContainer.innerHTML);
+}
+function showTask() {
+  listContainer.innerHTML = localStorage.getItem("data");
+}
+
+showTask();
