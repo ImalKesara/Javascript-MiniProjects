@@ -1,0 +1,51 @@
+<html data-theme="dim">
+    <head>
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link rel="stylesheet" href="index.css" />
+    </head>
+    <body>
+        <div class="container bg-secondary p-5 rounded">
+            <div class="text-center">
+                <h3 class="text-4xl">HOME</h3>
+                <p id="home-score" class="text-7xl score p-5 text-black">0</p>
+                <div>
+                    <button class="btn" onclick="incrementHomeScore(1)">
+                        +1
+                    </button>
+                    <button class="btn" onclick="incrementHomeScore(2)">
+                        +2
+                    </button>
+                    <button class="btn" onclick="incrementHomeScore(3)">
+                        +3
+                    </button>
+                </div>
+            </div>
+            <div class="text-center">
+                <h3 class="text-4xl">GUEST</h3>
+                <p id="guest-score" class="text-7xl score p-5 text-black">0</p>
+                <div>
+                    <button class="btn" onclick="incrementGuessScore(1)">
+                        +1
+                    </button>
+                    <button class="btn" onclick="incrementGuessScore(2)">
+                        +2
+                    </button>
+                    <button class="btn" onclick="incrementGuessScore(3)">
+                        +3
+                    </button>
+                </div>
+            </div>
+        </div>
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@5"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

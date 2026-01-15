@@ -1,0 +1,25 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 670px;
+    display: flex;
+    justify-content: space-around;
+}
+
+@font-face {
+    src: url("./cursed-timer-ulil-font//CursedTimerUlil-Aznm.ttf");
+    font-family: Cursed-timer;
+}
+
+.score {
+    font-family: Cursed-timer;
+}
